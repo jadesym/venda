@@ -351,10 +351,31 @@ function searchResults(data_list) {
   $('.search-results').html('');
   $('#search-result-h6').css('display', 'none');
 
+  var imagelinks = [
+  "./images/splenda.jpg",
+  "./images/kitchin.jpg",
+  "./images/sliced-pork-belly.jpg", 
+  "./images/ticket.jpg", 
+  "./images/iphone4.jpeg"];
+
+  var i = 0;
+
   console.log(data_list.val());
   data_list.forEach(function(data) {
 
-    $('.search-results').append('<li class="search-results-item"><button class="bid-button">BID</button>' + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
+    if(i < 5){
+    $('.search-results').append('<li class="search-results-item">'
+      + '<img src="' + imagelinks[i++] + '" alt="pic" class="search-pic">'
+      + '<button class="bid-button">BID</button>' 
+      + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
+      + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
+    } else{
+    $('.search-results').append('<li class="search-results-item">'
+      + '<div class="search-pic"></div>'
+      + '<button class="bid-button">BID</button>' 
+      + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
+      + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');  
+    }
 
     console.log(data.val());
     console.log(data.val().item.name);
