@@ -20,6 +20,14 @@ $(document).ready(function(){
   lat = urlVars[urlVars.length-2];
   lon = urlVars[urlVars.length-1];
 
+  $('#bars').on('click', function(){
+    if ($('#links-div').css('display') === 'none'){
+      $('#links-div').css('display', 'block');
+    } else {
+      $('#links-div').css('display', 'none');
+    }
+  })
+
   init();
 
     $('#dist-range').on('change', function() {

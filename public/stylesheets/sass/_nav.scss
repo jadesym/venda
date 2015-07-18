@@ -1,6 +1,7 @@
 .navigation {
   width: 100%;
-  background-color: rgba($warm-blue, 0.85);;
+  background-color: $warm-blue;
+  z-index: 1;
   position: fixed;
 
   .menu {

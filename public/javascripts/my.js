@@ -1,7 +1,8 @@
 var ref = new Firebase("https://venda.firebaseio.com");
 
-function Error(msg) {
-  $('#error').html(msg);
+function Error(message) {
+  $('#success').empty();
+  $('#error').text(message);
 }
 
 var authId;
@@ -106,20 +107,24 @@ function getItemById(idForItem) {
 
 function getAllItems() {
 	if (authId !== null || authId !== undefined) {
-		myItemsRef = ref.child('users').child(authId);
+		myItemsRef = ref.child('users').child(authId).child('myItems');
 		var itemsList = [];
-		myItemsRef.on('myItems', function(snapshot) {
-			var keyList = Object.getKeys(snapshot.val);
+		myItemsRef.on('value', function(snapshot) {
+			console.log(snapshot.val());
+			var keyList = Object.keys(snapshot.val());
+			console.log(keyList);
 			keyList.forEach(function(keyId) {
+				console.log(keyId);
 				var item = getItemById(keyId);
 				itemsList.push(item);
 			});
-			return itemList;
+			console.log(itemsList);
+			return itemsList;
 
 		}, function(error) {
 			console.log('Could not get your items! ERROR')
 			// Insert jquery for error logic
-			return null;
+			return [];
 		});
 	} else {
 		Error("You cannot get your items until you log in!");

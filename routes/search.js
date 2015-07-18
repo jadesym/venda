@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-  res.render('sell', { title: 'Venda | Sell' });
+  res.redirect(301, '/sell');
 });
 
 module.exports = router;

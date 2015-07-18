@@ -1,6 +1,20 @@
 nav(class='navigation')
   ul(class='menu')
     li(class='menu-item')
-      a(class='fa fa-bars')
+      i(id="bars" class='fa fa-bars')
+        div(id = "links-div", style="position: fixed; width:300px; min-height:100px; background-color: white;")
+          ul(id="links")
+            li(class="nav-link") 
+              a(href="/") 
+                i(class="fa fa-home") 
+                |  Home
+            li(class="nav-link")
+              a(href="/search") 
+                i(class="fa fa-shopping-cart")
+                |  Buy
+            li(class="nav-link") 
+              a(href="/sell") 
+                i(class="fa fa-money")
+                |  Sell
     li(class='menu-item')
-      h1(class="main-header") Search
+      h1(class="main-header") Venda

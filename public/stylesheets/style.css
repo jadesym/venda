@@ -1,6 +1,7 @@
 .navigation {
   width: 100%;
-  background-color: rgba(37, 100, 204, 0.85);
+  background-color: #2564CC;
+  z-index: 1;
   position: fixed; }
   .navigation .menu {
     margin: 0;
@@ -39,6 +40,9 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     background-color: #BBF3BB; }
 
+.search-button-js {
+  margin: 40px 0; }
+
 .label-cost,
 .label-dist,
 .label-category {
@@ -66,7 +70,7 @@
   .category-bar .range-helpers .range-input,
   .cost-bar .range-helpers .range-input,
   .dist-bar .range-helpers .range-input {
-    width: 30px; }
+    width: 60px; }
 
 .search-results {
   padding: 20px 0; }
@@ -77,9 +81,11 @@
     height: 80px;
     border: 1px solid rgba(0, 0, 0, 0.2); }
     .search-results .search-results-item:nth-child(odd) {
-      background-color: rgba(49, 87, 153, 0.2); }
+      color: #f0f0f0;
+      background-color: #315799; }
     .search-results .search-results-item:nth-child(even) {
-      background-color: rgba(104, 188, 213, 0.2); }
+      color: #f6f6f6;
+      background-color: #68BCD5; }
     .search-results .search-results-item .item-picture {
       background-color: rgba(0, 0, 0, 0.2);
       height: 60px;

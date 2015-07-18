@@ -17,6 +17,10 @@
   }
 }
 
+.search-button-js {
+  margin: 40px 0;
+}
+
 .label-cost,
 .label-dist,
 .label-category {
@@ -48,7 +52,7 @@
 
   .range-helpers {
     .range-input {
-      width: 30px;
+      width: 60px;
     }
   }
 }
@@ -64,11 +68,14 @@
     border: 1px solid rgba($black, 0.20);
 
     &:nth-child(odd) {
-      background-color: rgba($dark-blue, 0.2);
+
+      color: #f0f0f0;
+      background-color: $dark-blue;
     }
 
     &:nth-child(even) {
-      background-color: rgba($turquoise, 0.2);
+      color: $cream-white;
+      background-color: $turquoise;
     }
 
     .item-picture {

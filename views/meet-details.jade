@@ -1,5 +1,8 @@
 extends layout
 
+block nav
+	include nav.jade
+
 block content
 	div(class="main-container bgbgspace")
 		div(class="form-container large-container")
@@ -10,6 +13,6 @@ block content
 				h6 disclaimer and stuff
 			label(class="right-label") 
 				i(class="fa fa-building-o") 
-					span(id="meetup-location")  Market Street, San Francisco, CA
+					span(id="meetup-location") Location
 				i(class="fa fa-clock-o") 
-					span(id="meetup-time")  July 21, 1700 PST
+					span(id="meetup-time") July 21, 1700 PST

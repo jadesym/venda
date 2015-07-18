@@ -1,11 +1,14 @@
 var ref = new Firebase("https://venda.firebaseio.com/");
 
 function Error(message) {
+  $('#success').empty();
   $('#error').text(message);
 }
 
 function Success(msg) {
-  $('#success').html(msg);	
+  $('#error').empty();
+  $('#success').html(msg);
+
 }
 
 var usersRef = ref.child("users");

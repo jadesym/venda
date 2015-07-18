@@ -4,6 +4,15 @@ var usersRef = ref.child("users");
 var itemsRef = ref.child("items");
 var searchRef = ref.child("itemLookup")
 var authId;
+
+
+function Success(msg) {
+  $('#error').empty();
+  $('#success').html(msg);
+
+}
+
+
 function authDataCallback(authData) {
   if (authData) {
     authId = authData.uid;
@@ -163,7 +172,7 @@ function addItem(closingTime, name, type, minimumSuggestedPrice, initialBidPrice
 
       }
     })
-    
+    Success("Successfully put a new item on sale!")
 
   } else {
     Error("Error! user needs to be logged in to add an item!");
@@ -363,6 +372,7 @@ function searchResults(data_list) {
   console.log(data_list.val());
   data_list.forEach(function(data) {
 
+
     if(i < 5){
     $('.search-results').append('<li class="search-results-item">'
       + '<img src="' + imagelinks[i++] + '" alt="pic" class="search-pic">'
@@ -376,6 +386,7 @@ function searchResults(data_list) {
       + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
       + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');  
     }
+
 
     console.log(data.val());
     console.log(data.val().item.name);
