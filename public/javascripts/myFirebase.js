@@ -372,21 +372,50 @@ function searchResults(data_list) {
   console.log(data_list.val());
   data_list.forEach(function(data) {
 
-
-    if(i < 5){
-    $('.search-results').append('<li class="search-results-item">'
-      + '<img src="' + imagelinks[i++] + '" alt="pic" class="search-pic">'
+    switch(data.val().item.name){
+      case "splenda packets":
+        $('.search-results').append('<li class="search-results-item">'
+      + '<img src="' + imagelinks[0] + '" alt="pic" class="search-pic">'
       + '<button class="bid-button">BID</button>' 
       + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
       + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
-    } else{
-    $('.search-results').append('<li class="search-results-item">'
+        break;
+      case "LinkedIn kitch[in] snacks":
+        $('.search-results').append('<li class="search-results-item">'
+      + '<img src="' + imagelinks[1] + '" alt="pic" class="search-pic">'
+      + '<button class="bid-button">BID</button>' 
+      + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
+      + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
+        break;
+      case "pork belly":
+        $('.search-results').append('<li class="search-results-item">'
+      + '<img src="' + imagelinks[2] + '" alt="pic" class="search-pic">'
+      + '<button class="bid-button">BID</button>' 
+      + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
+      + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
+        break;
+      case "stanford - cal football ticket":
+        $('.search-results').append('<li class="search-results-item">'
+      + '<img src="' + imagelinks[3] + '" alt="pic" class="search-pic">'
+      + '<button class="bid-button">BID</button>' 
+      + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
+      + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
+        break;
+      case "iphone 4":
+        $('.search-results').append('<li class="search-results-item">'
+      + '<img src="' + imagelinks[4] + '" alt="pic" class="search-pic">'
+      + '<button class="bid-button">BID</button>' 
+      + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
+      + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');
+        break;
+      default:
+      $('.search-results').append('<li class="search-results-item">'
       + '<div class="search-pic"></div>'
       + '<button class="bid-button">BID</button>' 
       + data.val().item.name + ' | $' + data.val().currentBidPrice + '<br>' 
       + data.val().item.description + '<br>' + data.val().item.sellerLocation + '</li>');  
+        break;
     }
-
 
     console.log(data.val());
     console.log(data.val().item.name);
