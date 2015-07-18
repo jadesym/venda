@@ -206,3 +206,9 @@
 #bars:hover {
 	cursor: pointer;
 }
+
+.search-pic {
+	float: left;
+	height: 80px;
+	width: 80px;
+}
