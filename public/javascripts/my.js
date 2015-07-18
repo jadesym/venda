@@ -20,9 +20,9 @@ ref.onAuth(authDataCallback);
 
 function getAllBids() {
 	if (authId !== null || authId !== undefined) {
-		myBidsRef = ref.child('users').child(authId);
+		myBidsRef = ref.child('users').child(authId).child('myBids');
 		var myBids;
-		myBids.on('myBids', function(snapshot) {
+		myBids.on('value', function(snapshot) {
 			var keyList = Object.keys(snapshot.val);
 			var idsToPrice = {};
 			var bidsRef = ref.child('bids');
@@ -60,37 +60,38 @@ function getAllBids() {
 }
 
 function getItemById(idForItem) {
-	itemRef = ref.child('items');
+	itemRef = ref.child('items').child(idForItem);
 	var entireItem;
-	itemRef.on(idForItem, function (snapshot) {
+	itemRef.on("value", function (snapshot) {
 		entireItem = snapshot.val();
+		console.log(entireItem);
 	}, function(error) {
 		console.log("ERROR TRYING TO GET THE ITEM BY THAT ID!");
 		return { error: "ERROR" };
 	});
-	var imgUrls = entireItem.imgUrls;
-	var singleImgUrl;
-	for (firstObj in imgUrls) {
-		singleImgUrl = imgUrls.firstObj;
-		break;
-	}
+	// var imgUrls = entireItem.imgUrls;
+	// var singleImgUrl;
+	// for (firstObj in imgUrls) {
+	// 	singleImgUrl = imgUrls.firstObj;
+	// 	break;
+	// }
 	var relevantInfo;
-	if (entireItem.status === "OPEN") {
+	if (entireItem['status'] === "OPEN") {
 		relevantInfo = {
 			status: "OPEN",
 			itemId: idForItem,
 			closingTime: entireItem.closingTime,
 			bidPrice: entireItem.currentBidPrice,
 			itemName: entireItem.name,
-			imgUrl: singleImgUrl
+			// imgUrl: singleImgUrl
 		}
-	} else if (entireItem.status === "ON HOLD") {
+	} else if (entireItem['status']=== "ON HOLD") {
 		relevantInfo = {
 			status: "ON HOLD",
 			itemId: idForItem,
 			bidPrice: entireItem.currentBidPrice,
 			itemName: entireItem.name,
-			imgUrl: singleImgUrl,
+			// imgUrl: singleImgUrl,
 			meetupTime: entireItem.meetupTime,
 			meetupLocation: entireItem.meetupLocation
 		}
@@ -99,7 +100,7 @@ function getItemById(idForItem) {
 			status: "COMPLETED",
 			bidPrice: entireItem.currentBidPrice,
 			itemName: entireItem.name,
-			imgUrl: singleImgUrl
+			// imgUrl: singleImgUrl
 		}
 	}
 	return relevantInfo;
