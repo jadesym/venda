@@ -81,11 +81,11 @@
     height: 80px;
     border: 1px solid rgba(0, 0, 0, 0.2); }
     .search-results .search-results-item:nth-child(odd) {
-      color: #f0f0f0;
-      background-color: #315799; }
+      background-color: rgba(49, 87, 153, 0.5);
+      border-left: 40px solid #315799; }
     .search-results .search-results-item:nth-child(even) {
-      color: #f6f6f6;
-      background-color: #68BCD5; }
+      background-color: rgba(104, 188, 213, 0.5);
+      border-left: 40px solid #68BCD5; }
     .search-results .search-results-item .item-picture {
       background-color: rgba(0, 0, 0, 0.2);
       height: 60px;
@@ -125,6 +125,9 @@ body {
   font-size: 14px;
   font-size: 1.4rem;
   text-align: center; }
+
+#links {
+  font-family: Dosis; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**

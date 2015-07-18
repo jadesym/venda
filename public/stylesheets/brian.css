@@ -50,7 +50,7 @@
 .form-container h6 {
 	margin-top: 10px;
 	font-weight: normal;
-	color: #777;	
+	color: #777;
 }
 
 .form-container form {
@@ -145,7 +145,7 @@
 
 .bgbggs {
 	background: url('/garagesale.jpg');
-	background-size: cover;	
+	background-size: cover;
 }
 
 .fade {
@@ -175,6 +175,8 @@
 
 #links-div {
 	display: none;
+	top: 48px;
+	left: -20px;
 }
 
 #links {

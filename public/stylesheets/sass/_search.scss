@@ -69,13 +69,15 @@
 
     &:nth-child(odd) {
 
-      color: #f0f0f0;
-      background-color: $dark-blue;
+      // color: #f0f0f0;
+      background-color: rgba($dark-blue, 0.5);
+      border-left: 40px solid $dark-blue;
     }
 
     &:nth-child(even) {
-      color: $cream-white;
-      background-color: $turquoise;
+      // color: $cream-white;
+      background-color: rgba($turquoise, 0.5);
+      border-left: 40px solid $turquoise;
     }
 
     .item-picture {
