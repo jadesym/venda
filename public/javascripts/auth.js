@@ -8,7 +8,6 @@ function Error(message) {
 function Success(msg) {
   $('#error').empty();
   $('#success').html(msg);
-
 }
 
 var usersRef = ref.child("users");
