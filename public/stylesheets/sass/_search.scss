@@ -61,11 +61,12 @@
   padding: 20px 0;
 
   .search-results-item {
-    width: 70%;
+    width: 60%;
     margin: 15px 15%;
     display: block;
     height: 80px;
     border: 1px solid rgba($black, 0.20);
+    float: right;
 
     &:nth-child(odd) {
 
